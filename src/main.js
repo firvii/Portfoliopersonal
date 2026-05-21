@@ -14,10 +14,47 @@ const footerSlot = document.getElementById('global-footer');
 
 if (headerSlot) {
     headerSlot.innerHTML = headerHtml;
+    initHamburger(); // Inicializa el menú hamburguesa tras inyectar el header
 }
 
 if (footerSlot) {
     footerSlot.innerHTML = footerHtml;
+}
+
+// ==========================================================================
+// INICIALIZACIÓN DEL MENÚ HAMBURGUESA
+// ==========================================================================
+function initHamburger() {
+    const toggle   = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const overlay  = document.querySelector('.nav-overlay');
+
+    if (!toggle || !navLinks) return;
+
+    const openMenu = () => {
+        toggle.classList.add('abierto');
+        navLinks.classList.add('abierto');
+        if (overlay) overlay.classList.add('abierto');
+        document.body.style.overflow = 'hidden';
+        toggle.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeMenu = () => {
+        toggle.classList.remove('abierto');
+        navLinks.classList.remove('abierto');
+        if (overlay) overlay.classList.remove('abierto');
+        document.body.style.overflow = '';
+        toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    toggle.addEventListener('click', () => {
+        toggle.classList.contains('abierto') ? closeMenu() : openMenu();
+    });
+
+    if (overlay) overlay.addEventListener('click', closeMenu);
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
 }
 
 // ==========================================================================
