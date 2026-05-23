@@ -1,0 +1,109 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(3, 3, 3, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+nav {
+    max-width: var(--max-ancho);
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 3rem; /* Más espacio horizontal para separar mejor los elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--fuente-tech);
+    font-weight: 900;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 4px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    transition: var(--transicion);
+    flex-shrink: 0; /* ESCUDO: Evita que el logo se deforme o se aplaste */
+    margin-right: 2rem; /* Separa el título del grupo de enlaces */
+}
+
+.logo:hover {
+    text-shadow: 0 0 10px var(--color-azul);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem; /* Más separación entre los enlaces del menú */
+    align-items: center;
+    flex-shrink: 0; /* ESCUDO: Impide que los enlaces se estrangulen entre sí */
+}
+
+.nav-links a {
+    color: var(--color-texto-suave);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: var(--fuente-tech);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transicion);
+    white-space: nowrap; /* Impide que las palabras largas se rompan en dos líneas raras */
+}
+
+/* Animación de línea expansiva */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--color-azul);
+    box-shadow: 0 0 8px var(--color-azul);
+    transition: var(--transicion);
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover, 
+.nav-links a.activo {
+    color: #ffffff;
+}
+
+.nav-links a:hover::after, 
+.nav-links a.activo::after {
+    width: 100%;
+}
+
+/* Botón de Contacto Destacado */
+.nav-cta {
+    background: rgba(0, 102, 255, 0.08);
+    border: 1px solid var(--color-azul) !important;
+    padding: 0.6rem 1.3rem !important;
+    border-radius: 4px;
+}
+
+.nav-cta:hover {
+    background: var(--color-azul) !important;
+    box-shadow: 0 0 25px rgba(0, 102, 255, 0.6) !important;
+}
+
+/* ==========================================================================
+   CONTROL DE PANTALLAS MEDIANAS (Laptops pequeñas / Tablets)
+   ========================================================================== */
+@media (max-width: 1100px) {
+    .nav-links {
+        gap: 1.2rem; /* Mantiene buena separación sin saturar en pantallas medianas */
+    }
+    .nav-links a {
+        font-size: 0.75rem; /* Reduce un pelín la letra para salvar el diseño */
+        letter-spacing: 1px;
+    }
+}

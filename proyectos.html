@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kings&family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>Proyectos — Alex Firvida</title>
+</head>
+<body>
+    <header id="global-header"></header>
+    <main class="proyectos-page" style="opacity: 0; transition: opacity 0.3s ease-in-out;">
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <span class="page-tag ani-fade-up">[ PORTFOLIO // PROYECTOS ]</span>
+                <h1 class="page-title ani-fade-up-delayed">Proyectos realizados a partir de conocimientos académicos y autodidactas.</h1>
+                <p class="page-desc ani-fade-in">Soluciones construidas para reducir fricción, estabilizar operaciones y entregar resultados medibles desde el primer despliegue.</p>
+            </div>
+            <div class="page-hero-glow"></div>
+        </section>
+
+        <section class="project-section">
+            <article class="project-card scroll-anim">
+                <h2 class="project-title">The Manager</h2>
+                <p class="project-subtitle">Aplicación de gestión y control financiero orientada al usuario final.</p>
+
+                <div class="project-meta">
+                    <div><strong>El Problema Operativo:</strong> Usuarios sin experiencia financiera enfrentaban procesos manuales y confusos al intentar entender su situación económica real.</div>
+                    <div><strong>Stack Tecnológico:</strong> Flask, Python, SQLAlchemy, JavaScript, Bootstrap, PostgreSQL.</div>
+                </div>
+
+                <div class="project-details">
+                    <p><strong>Solución Implementada:</strong> Plataforma web parcial construida con Flask que centraliza datos financieros y ofrece métricas accionables. El backend está diseñado para integrar múltiples fuentes de transacciones, normalizar resultados y exponer paneles de control sencillos. La arquitectura prioriza la estabilidad del procesamiento de datos y la capacidad de escalar información sin bloquear la experiencia del usuario.</p>
+                    <p><strong>Resultado:</strong> Se redujo la complejidad operativa para el usuario al eliminar tareas manuales de conciliación y visualización. El enfoque permitió transformar datos dispersos en un flujo continuo de decisiones financieras, con un sistema inicialmente estable y fácil de ampliar.</p>
+                </div>
+            </article>
+
+            <article class="project-card scroll-anim">
+                <h2 class="project-title">Prometheus</h2>
+                <p class="project-subtitle">Procesador de datos médicos para navegación rápida y consulta diaria.</p>
+
+                <div class="project-meta">
+                    <div><strong>El Problema Operativo:</strong> La información médica estaba fragmentada y lenta de acceder, lo que obligaba a los usuarios a perder tiempo navegando entre fuentes y formularios.</div>
+                    <div><strong>Stack Tecnológico:</strong> Python, Flask, REST APIs, pandas, HTML/CSS, JavaScript.</div>
+                </div>
+
+                <div class="project-details">
+                    <p><strong>Solución Implementada:</strong> Procesador de datos que unifica registros médicos en un panel de navegación ágil, con filtros rápidos y respuestas inmediatas. La solución se construyó con una arquitectura centrada en consultas y visualización, para que el usuario pueda acceder a datos críticos sin pasos innecesarios.</p>
+                    <p><strong>Resultado:</strong> Se consiguió una reducción del tiempo de búsqueda de información médica, mejorando la experiencia diaria. El proyecto está diseñado como un acompañante diario, con foco en la estabilidad y la entrega de datos relevantes de forma consistentemente rápida.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer id="global-footer"></footer>
+    <script src="main.js"></script>
+</body>
+</html>
